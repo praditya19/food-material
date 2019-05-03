@@ -18,7 +18,7 @@ const styles = {
   }
 };
 
-function Navres(props) {
+function NavbarCard(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
@@ -34,8 +34,8 @@ function Navres(props) {
   );
 }
 
-Navres.propTypes = {
+NavbarCard.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Navres);
+export default withStyles(styles)(NavbarCard);

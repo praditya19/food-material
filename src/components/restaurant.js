@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Avatar from "@material-ui/core/Avatar";
 import Typography from "@material-ui/core/Typography";
 import red from "@material-ui/core/colors/red";
-import Navres from "./navres";
+import NavbarCard from "../containers/NavbarCard/navbarcard";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
@@ -56,7 +56,7 @@ class Restaurant extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Navres />
+        <NavbarCard />
         <Grid container spacing={24}>
           <Grid item xs>
             <Paper className={classes.paper}>

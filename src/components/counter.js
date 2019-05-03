@@ -62,7 +62,7 @@ class Counter extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    const { id, biaya, gambar } = this.props.item;
+    const { id, biaya } = this.props.item;
     return (
       <Card className={classes.card}>
         <CardMedia
