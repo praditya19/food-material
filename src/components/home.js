@@ -59,9 +59,18 @@ class Home extends React.Component {
             className={classes.root.Bottom}
             style={{ backgroundColor: "green" }}
           >
-            <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+            <img
+              style={{ height: 50 }}
+              src="https://image.flaticon.com/icons/svg/69/69524.svg"
+            />
+            <img
+              style={{ height: 50, marginLeft: 30 }}
+              src="https://image.flaticon.com/icons/svg/483/483947.svg"
+            />
+            <img
+              style={{ height: 50, marginLeft: 40 }}
+              src="https://image.flaticon.com/icons/svg/39/39508.svg"
+            />
           </BottomNavigation>
         </div>
       </div>

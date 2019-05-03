@@ -62,12 +62,12 @@ class Counter extends React.Component {
   };
   render() {
     const { classes } = this.props;
-    const { price, id } = this.props.item;
+    const { id, biaya, gambar } = this.props.item;
     return (
       <Card className={classes.card}>
         <CardMedia
           className={classes.cover}
-          image="https://mcdonalds.co.id/uploads/KII68tTAXvubUBv5WAqM.png"
+          image={this.props.gambar}
           title="Live from space album cover"
         />
         <div className={classes.details}>
@@ -76,7 +76,7 @@ class Counter extends React.Component {
               {this.props.nama}
             </Typography>
             <Typography variant="subtitle1" color="textSecondary">
-              <p>Harga : Rp.{price}</p>
+              <p>Harga : Rp.{biaya}</p>
             </Typography>
           </CardContent>
           <div className={classes.controls}>
