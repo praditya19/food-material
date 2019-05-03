@@ -85,7 +85,7 @@ class Counter extends React.Component {
               variant="contained"
               color="primary"
             >
-              minus
+              -
             </Button>
 
             <h2>{this.state.angka}</h2>
@@ -95,7 +95,7 @@ class Counter extends React.Component {
               variant="contained"
               color="primary"
             >
-              plus
+              +
             </Button>
           </div>
         </div>

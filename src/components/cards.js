@@ -52,7 +52,7 @@ class Kartu extends React.Component {
                       Go-Food
                     </Typography>
                     <Typography component="p">
-                      Jika Anda lapar silahkan kunjungi Go-food
+                      Jika Anda lapar silahkan kunjungi Go-Food
                     </Typography>
                   </CardContent>
                 </CardActionArea>
@@ -81,7 +81,7 @@ class Kartu extends React.Component {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Go-Food
+                      Go-Send
                     </Typography>
                     <Typography component="p">
                       Jika Anda ingin mengirim pesan silahkan kunjungi Go-Send
@@ -111,10 +111,109 @@ class Kartu extends React.Component {
                   />
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Go-Food
+                      Go-Ride
                     </Typography>
                     <Typography component="p">
-                      Jika Anda lapar silahkan kunjungi Go-food
+                      Jika Anda ingin berpergian silahkan kunjungi Go-Ride
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    className={classes.Actions}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Kunjungi
+                  </Button>
+                </CardActions>
+              </Card>
+            </Paper>
+          </Grid>
+        </Grid>
+        <br />
+        <Grid container spacing={24}>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              {" "}
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="http://www.tribunsumbar.com/wp-content/uploads/2017/06/og-gocar.jpg"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Go-Car
+                    </Typography>
+                    <Typography component="p">
+                      Jika Anda ingin berpergian menggunakan mobil silahkan
+                      kunjungi Go-Car
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    className={classes.Actions}
+                    component={Link}
+                    to="/restaurant"
+                    variant="contained"
+                    color="primary"
+                  >
+                    Kunjungi
+                  </Button>
+                </CardActions>
+              </Card>
+            </Paper>
+          </Grid>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://statik.tempo.co/data/2016/10/06/id_545081/545081_620.jpg"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Go-Box
+                    </Typography>
+                    <Typography component="p">
+                      Aplikasi GO-Box adalah cara mudah untuk memesan truk untuk
+                      semua kebutuhan Anda, kapan saja, di mana saja
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+                <CardActions>
+                  <Button
+                    className={classes.Actions}
+                    variant="contained"
+                    color="primary"
+                  >
+                    Kunjungi
+                  </Button>
+                </CardActions>
+              </Card>
+            </Paper>
+          </Grid>
+          <Grid item xs>
+            <Paper className={classes.paper}>
+              <Card className={classes.card}>
+                <CardActionArea>
+                  <CardMedia
+                    className={classes.media}
+                    image="https://pbs.twimg.com/media/C21sDzZUsAA1-Tj.jpg"
+                    title="Contemplative Reptile"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Go-Med
+                    </Typography>
+                    <Typography component="p">
+                      Jika Anda merasa sakit dan perlu obat maka kunjungilah
+                      Go-Med
                     </Typography>
                   </CardContent>
                 </CardActionArea>

@@ -5,7 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-
+import Navmen from "./navmen";
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
@@ -101,6 +101,7 @@ class Menu extends Component {
 
     return (
       <div>
+        <Navmen />
         <Grid container spacing={24}>
           {this.state.food.map((item, index) => (
             <Grid
@@ -126,7 +127,10 @@ class Menu extends Component {
         <br />
         <br />
         <Paper className={classes.root} elevation={1}>
-          <h5>Keranjang makanan</h5>
+          <center>
+            <h5>Keranjang makanan</h5>
+          </center>
+
           <ul>
             {/* {this.state.barang.map(item => (
               <li>{item.nama}</li>

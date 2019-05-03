@@ -23,7 +23,7 @@ function Navres(props) {
   return (
     <div className={classes.root}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar style={{ backgroundColor: "green" }}>
           <Typography variant="h6" color="inherit" className={classes.grow}>
             Daftar Restaurant
           </Typography>
