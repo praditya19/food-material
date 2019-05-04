@@ -38,7 +38,6 @@ class Dashbord extends Component {
         price: 20000,
         biaya: 20000,
         jumlah: 0,
-        biaya: 25000,
         nama: "Paket Ayam 1",
         gambar:
           "https://www.mcdonalds.com.my/storage/foods/May2018/8Cw1if8XxZFkpuavHqp9.jpg"
