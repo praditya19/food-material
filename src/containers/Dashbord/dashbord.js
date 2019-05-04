@@ -150,11 +150,11 @@ class Dashbord extends Component {
             <h5>Keranjang makanan</h5>
           </center>
 
-          <ul>
+          {/* <ul>
             {this.state.barang.map(item => (
               <li>{this.state.nama}</li>
             ))}{" "}
-          </ul>
+          </ul> */}
           <Typography component="p">
             <div align="center">
               <h4>Total Harga:{this.state.jumlah}</h4>
