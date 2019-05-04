@@ -153,7 +153,7 @@ class Dashbord extends Component {
 
           <ul>
             {this.state.barang.map(item => (
-              <li>this.state.name</li>
+              <li>{this.state.nama}</li>
             ))}{" "}
           </ul>
           <Typography component="p">
