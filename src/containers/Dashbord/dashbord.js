@@ -33,7 +33,7 @@ class Dashbord extends Component {
     barang: [],
     food: [
       {
-        id: 1,
+        id: "1",
         number: 0,
         price: 20000,
         biaya: 20000,
@@ -43,7 +43,7 @@ class Dashbord extends Component {
           "https://www.mcdonalds.com.my/storage/foods/May2018/8Cw1if8XxZFkpuavHqp9.jpg"
       },
       {
-        id: 2,
+        id: "2",
         price: 25000,
         number: 0,
         jumlah: 0,
@@ -53,7 +53,7 @@ class Dashbord extends Component {
           "https://asset.barrons.com/public/resources/images/ON-BI972_McDona_G_20150304181209.jpg"
       },
       {
-        id: 3,
+        id: "3",
         price: 30000,
         number: 0,
         jumlah: 0,
@@ -63,7 +63,7 @@ class Dashbord extends Component {
           "https://media-cdn.tripadvisor.com/media/photo-s/04/26/47/e2/texas-chicken.jpg"
       },
       {
-        id: 4,
+        id: "4",
         price: 35000,
         number: 0,
         jumlah: 0,
@@ -72,48 +72,58 @@ class Dashbord extends Component {
         gambar: "https://mcdonalds.co.id/uploads/KII68tTAXvubUBv5WAqM.png"
       }
     ],
-    jumlah: 0
+    biaya: 0,
+    pesanan: [],
+    batalkan: []
   };
 
-  order = id => {
-    const data = this.state.food;
-    const foodfind = data.find(item => item.id === 1);
-    const plus = foodfind["price"] + foodfind["price"];
-    const update = (foodfind.price = plus);
-    console.log(update);
+  plus = id => {
+    const food = this.state.food;
+    const filterFood = food.find(item => item.id === id);
+    const update = { ...filterFood, jumlah: filterFood.jumlah + 1 };
     this.setState({
-      jumlah: update
+      food: food.map(o => (o.id === filterFood.id ? update : o))
+    });
+    this.pesan(id);
+  };
+  minus = id => {
+    const food = this.state.food;
+    const filterFood = food.find(item => item.id === id);
+    const update = { ...filterFood, jumlah: filterFood.jumlah - 1 };
+    if (filterFood.jumlah === 0) {
+      return;
+    } else {
+      this.setState({
+        food: food.map(o => (o.id === filterFood.id ? update : o))
+      });
+      this.batal(id);
+    }
+  };
+
+  pesan = id => {
+    const { food, pesanan } = this.state;
+    const filterFood = food.find(item => item.id === id);
+    const convert = {
+      ...filterFood
+    };
+    this.setState({
+      pesanan: [...pesanan, convert]
+    });
+    return;
+  };
+  batal = id => {
+    const { food, batalkan } = this.state;
+    const filterFood = food.find(item => item.id === id);
+    const convert = {
+      ...filterFood
+    };
+    this.setState({
+      batalkan: [...batalkan, convert]
     });
   };
-  kurang = id => {
-    const data = this.state.food;
-    const foodfind = data.find(item => item.id === 1);
-    const minus = foodfind["price"] - foodfind["price"];
-    const update = (foodfind.price = minus);
-    console.log(update);
-    this.setState({
-      jumlah: update
-    });
-  };
-  plus = (harga, item) => {
-    this.setState({
-      // jumlah: this.state.jumlah + harga,
-      barang: this.state.barang.concat(item)
-    });
-    this.order();
-    // sessionStorage.jumlah = this.state.jumlah + harga;
-  };
-  minus = (harga, item) => {
-    this.setState({
-      //   // jumlah: this.state.jumlah - harga
-      //     barang: this.state.barang.filter(item)
-    });
-    this.kurang();
-    //   // sessionStorage.jumlah = this.state.jumlah - harga;
-  };
+
   render() {
     const { classes } = this.props;
-    // console.log(this.state.barang);
 
     return (
       <div>
@@ -133,12 +143,14 @@ class Dashbord extends Component {
             >
               <Counter
                 item={item}
-                plus={() => this.plus(item.id)}
-                minus={() => this.minus(item.id)}
+                tambah={() => this.plus(item.id)}
+                kurang={() => this.minus(item.id)}
                 food={this.state.food}
                 name={item.nama}
                 biaya={item.biaya}
+                jumlah={item.jumlah}
                 gambar={item.gambar}
+                id={item.id}
               />
             </Grid>
           ))}
@@ -149,15 +161,22 @@ class Dashbord extends Component {
           <center>
             <h5>Keranjang makanan</h5>
           </center>
-
-          {/* <ul>
-            {this.state.barang.map(item => (
-              <li>{this.state.nama}</li>
-            ))}{" "}
-          </ul> */}
           <Typography component="p">
             <div align="center">
-              <h4>Total Harga:{this.state.jumlah}</h4>
+              <h4>
+                <ul>
+                  {this.state.pesanan.map(items => {
+                    return (
+                      <li>
+                        <p style={{ marginRight: 200, marginBottom: 10 }}>
+                          {items.nama}
+                        </p>
+                        <p style={{ marginLeft: 200 }}>Harga:{items.biaya}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </h4>
               <Button
                 style={{ backgroundColor: "green" }}
                 component={Link}

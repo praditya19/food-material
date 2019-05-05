@@ -48,7 +48,7 @@ class Counter extends React.Component {
       angka: this.state.angka + 1
     });
     const y = this.props.food.find(item => item.id === id);
-    this.props.plus(this.props.item.price, y);
+    this.props.plus(this.props.id);
   };
   kurang = id => {
     if (this.state.angka === 0) {
@@ -81,17 +81,18 @@ class Counter extends React.Component {
           </CardContent>
           <div className={classes.controls}>
             <Button
-              onClick={() => this.kurang(id)}
+              onClick={this.props.kurang}
               variant="contained"
               color="primary"
             >
               -
             </Button>
 
-            <h2>{this.state.angka}</h2>
+            <h2>{this.props.jumlah}</h2>
 
             <Button
-              onClick={() => this.tambah(id)}
+              // onClick={() => this.tambah(id)}
+              onClick={this.props.tambah}
               variant="contained"
               color="primary"
             >

@@ -106,7 +106,7 @@ class NavbarMenu extends React.Component {
         >
           <Toolbar disableGutters={!open}>
             <Typography variant="h6" color="inherit" noWrap>
-              <image
+              <img
                 style={{ width: 150 }}
                 src="https://pngimage.net/wp-content/uploads/2018/06/logo-go-food-png-3.png"
               />
